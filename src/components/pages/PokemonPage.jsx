@@ -5,14 +5,21 @@ import { useState } from 'react'
 import axios from 'axios'
 import { useEffect } from 'react'
 import InfiniteScroll from 'react-infinite-scroll-component'
+import ProgressBar from './ProgressBar'
+import { useRef } from 'react'
+// import ProgressBar from "@ramonak/react-progress-bar"
+// import { LineProgressBar } from '@frogress/line'
+// import  Line  from 'rc-progress';
+
 
 const PokemonPage = () => {
 
   const [pokemonListDisplay, setPokemonListDisplay] = useState(true)
   const [listPokemon, setListPokemon] = useState([])
   const [staticPokemon, setStaticPokemon] = useState([])
-  const [page, setPage] = useState(4)
-
+  const [page, setPage] = useState(14)
+  const [status, setStatus] = useState(true)
+  const [name,setName] = useState('')
 
   const searchPokemonList = (e) => {
     
@@ -73,6 +80,10 @@ const PokemonPage = () => {
     setPage(page + 10)
   }
 
+  const statusChange = () => {
+    setStatus(!status)
+  }
+
   
 
 // console.log(staticPokemon)
@@ -113,18 +124,44 @@ const PokemonPage = () => {
 
       <div id='dataShowGrid'>
       {staticPokemon.map((data)=>{
-        console.log('data:', data)
+        // console.log('data:', data)
+        // let x = data.stats
+            // console.log('x:', x)
         // console.log( "img", data.sprites.back_default)
         // console.log( "id", data.order)
         // console.log( "name", data.name)
         // console.log( "type", data.types[0].type.name)
+
+        
         return(
-          <div id='singleBox' >
+          <>
+          <div id={status ? "singleBox" : "singleBoxHover"}  onMouseOver={statusChange}>
+            <div key={data.order}>
             <img src={data.sprites.back_default} className='pokeLogo' alt="" />
             <p className='margin fontsizep'>#{data.order}</p>
             <h5 className='margin'>{data.name}</h5>
             <p  className='margin fontsizep'>{data.types[0].type.name}</p>
+            </div>
+          <div>
+            <div >
+                {data.stats.map((gp, i) => {
+                  // console.log(gp)
+                  // console.log(data.order)
+                  return(
+                  <div key={i} id='singleBox2' >
+                      {/* <label></label> */}
+                     <div className='fontBarName'>{gp.stat.name}</div>
+                     <div className='bar'><ProgressBar completed={gp.base_stat}/></div>
+                     
+                      
+                  </div>
+                  )
+                })}
+            </div>
+            </div>
           </div>
+         
+          </>
         )
       })}
       </div>

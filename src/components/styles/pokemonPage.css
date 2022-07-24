@@ -75,13 +75,30 @@ body{
 }
 #singleBox{
     /* width: 25%; */
-    /* border: 1px solid black; */
+    border: 1px solid black;
     border-radius:10px;
     /* height: 250px; */
     background-color: rgb(126,185,152);
     color: white;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
+
+#singleBox2:hover{
+    display: block;
+}
+
+#singleBoxHover{
+    cursor: pointer;
+    display:none;
+}
+/* #singleBox:hover{
+    cursor: pointer;
+    display:none;
+} */
+/* #singleBox2:hover{
+    cursor: pointer;
+    display:block;
+} */
 .pokeLogo{
     border-radius: 50%;
     margin-top: 10px;
@@ -99,4 +116,32 @@ body{
 }
 .btn{
     margin-top: 50px;
+}
+
+#singleBox2{
+    /* width: 25%; */
+    border: 1px solid black;
+    border-radius:10px;
+    /* height: 250px; */
+    background-color: rgb(126,185,152);
+    color: white;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    display: flex;
+    align-items: center;
+    display: none;
+}
+#singleBox2:hover{
+    display: block;
+}
+
+.fontBarName{
+    /* border: 1px solid black; */
+    font-size: 18px;
+    text-align: left;
+    width: 30%;
+}
+.bar{
+    width: 80%;
+    flex: 4;
+    width: 70%;
 }
