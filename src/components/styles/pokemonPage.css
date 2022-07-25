@@ -1,27 +1,25 @@
 body{
     margin-top: 0px;
     margin-bottom: 0px;
-    border: 1px solid black;
-    background-color: rgb(57,62,70);
 }
 #inpBox{
-    /* width: 50%; */
-    /* margin: 0px; */
+    width: 100%;
     margin: auto;
-    height: 100px;
+    /* height: 100px; */
     background-color: rgb(57,62,70);
     margin-top: 0px;
 
 }
+#main{
+    border: 1px solid black;
+}
 #searchLogo{
-    position: relative;
     top: 8px;
-    left: 45px;
-    /* border: 1px solid black; */
+    left: 27%;
 }
 .inputBox{
     width: 40%;
-    margin: auto;
+    margin-left: 25%;
     height: 50px;
     border-radius: 15px;
     font-size: 25px;
@@ -31,11 +29,10 @@ body{
     border-radius: 15px;
     margin-top: 5px;
     height: 300px;
-    margin-left: 8%;
+    margin-left: 4%;
     overflow-y: scroll;
-    
+    z-index: 1;
     width: 44%;
-    /* margin: auto; */
     backdrop-filter: blur(10px);
     position: absolute;
     left: 21%;
@@ -46,7 +43,6 @@ body{
   }
 #pokemonName{
     border-radius: 15px;
-    /* border: 1px solid black; */
     margin: 3px;
     text-align: left;
     font-size: 22px;
@@ -60,54 +56,25 @@ body{
 }
 
 #dataShowGrid{
-    /* width: 90%; */
    
     margin: 0px;
     padding: 3%;
     padding-left: 8%;
     display: grid;
     grid-template-columns: repeat(4, 20%);
-    /* grid-template-rows: repeat(auto, 20%); */
     grid-gap:70px;
     border: 1px solid black;
     background-color: rgb(228,212,188);
-    
-}
-#singleBox{
-    /* width: 25%; */
-    border: 1px solid black;
-    border-radius:10px;
-    /* height: 250px; */
-    background-color: rgb(126,185,152);
-    color: white;
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    position: relative;
 }
 
-#singleBox2:hover{
-    display: block;
-}
-
-#singleBoxHover{
-    cursor: pointer;
-    display:none;
-}
-/* #singleBox:hover{
-    cursor: pointer;
-    display:none;
-} */
-/* #singleBox2:hover{
-    cursor: pointer;
-    display:block;
-} */
 .pokeLogo{
     border-radius: 50%;
     margin-top: 10px;
-    /* width: 5%; */
     background-color: rgb(191,220,204);
 }
 .margin{
     
-    /* border: 1px solid black; */
     margin: 6px;
 }
 .fontsizep{
@@ -117,25 +84,7 @@ body{
 .btn{
     margin-top: 50px;
 }
-
-#singleBox2{
-    /* width: 25%; */
-    border: 1px solid black;
-    border-radius:10px;
-    /* height: 250px; */
-    background-color: rgb(126,185,152);
-    color: white;
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-    display: flex;
-    align-items: center;
-    display: none;
-}
-#singleBox2:hover{
-    display: block;
-}
-
 .fontBarName{
-    /* border: 1px solid black; */
     font-size: 18px;
     text-align: left;
     width: 30%;
@@ -145,3 +94,57 @@ body{
     flex: 4;
     width: 70%;
 }
+
+
+
+
+
+
+.back{
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    z-index: -10;
+}
+.front:hover{
+    content: "";
+    display: none;
+}
+
+    .singleBox{
+        border-radius:10px;
+        text-align: center;
+        background-color: rgb(126,185,152);
+        color: white;
+        display: block;
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+        position: relative;
+    }
+    .singleBox:hover{
+        content: "";
+        display: block;
+        z-index: 5;
+        
+    }
+    
+  
+    .singleBoxHover{
+        cursor: pointer;
+        border: 2px solid red;
+    }
+   
+    .singleBox2{
+        border-radius:10px;
+        background-color: rgb(126,185,152);
+        color: white;
+        /* box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px; */
+        display: flex;
+        align-items: center;
+        /* display: block; */
+    }
+    .singleBox2Hover{
+        display: none;
+        border: 2px solid purple;
+    
+    }
+
